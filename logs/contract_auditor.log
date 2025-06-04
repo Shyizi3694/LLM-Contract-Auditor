@@ -2,3 +2,19 @@
 2025-06-04 15:30:50 - __main__ - WARNING - logging_setup.<module>:59 - This is a warning message.
 2025-06-04 15:30:50 - __main__ - ERROR - logging_setup.<module>:60 - This is an error message.
 2025-06-04 15:30:50 - __main__ - CRITICAL - logging_setup.<module>:61 - This is a critical message.
+2025-06-04 15:42:09 - root - INFO - logging_setup.setup_logging:70 - 这是一条INFO级别的彩色日志 (green)
+2025-06-04 15:42:09 - root - WARNING - logging_setup.setup_logging:71 - 这是一条WARNING级别的彩色日志 (yellow)
+2025-06-04 15:42:09 - root - ERROR - logging_setup.setup_logging:72 - 这是一条ERROR级别的彩色日志 (red)
+2025-06-04 15:42:09 - root - CRITICAL - logging_setup.setup_logging:73 - 这是一条CRITICAL级别的彩色日志 (red on white bg)
+2025-06-04 15:42:09 - __main__ - INFO - logging_setup.<module>:80 - This is an info message.
+2025-06-04 15:42:09 - __main__ - WARNING - logging_setup.<module>:81 - This is a warning message.
+2025-06-04 15:42:09 - __main__ - ERROR - logging_setup.<module>:82 - This is an error message.
+2025-06-04 15:42:09 - __main__ - CRITICAL - logging_setup.<module>:83 - This is a critical message.
+2025-06-04 15:42:15 - __main__ - INFO - logging_setup.<module>:80 - This is an info message.
+2025-06-04 15:42:15 - __main__ - WARNING - logging_setup.<module>:81 - This is a warning message.
+2025-06-04 15:42:15 - __main__ - ERROR - logging_setup.<module>:82 - This is an error message.
+2025-06-04 15:42:15 - __main__ - CRITICAL - logging_setup.<module>:83 - This is a critical message.
+2025-06-04 15:42:29 - __main__ - INFO - logging_setup.<module>:80 - This is an info message.
+2025-06-04 15:42:29 - __main__ - WARNING - logging_setup.<module>:81 - This is a warning message.
+2025-06-04 15:42:29 - __main__ - ERROR - logging_setup.<module>:82 - This is an error message.
+2025-06-04 15:42:29 - __main__ - CRITICAL - logging_setup.<module>:83 - This is a critical message.

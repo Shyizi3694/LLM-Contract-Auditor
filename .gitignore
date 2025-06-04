@@ -7,3 +7,10 @@ __pycache__/
 
 # Virtual Environment
 .venv/
+
+# VSCode settings
+.vscode/
+
+# pytest cache
+.cache/
+.pytest_cache/
