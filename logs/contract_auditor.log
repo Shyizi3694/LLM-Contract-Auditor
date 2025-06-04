@@ -18,3 +18,43 @@
 2025-06-04 15:42:29 - __main__ - WARNING - logging_setup.<module>:81 - This is a warning message.
 2025-06-04 15:42:29 - __main__ - ERROR - logging_setup.<module>:82 - This is an error message.
 2025-06-04 15:42:29 - __main__ - CRITICAL - logging_setup.<module>:83 - This is a critical message.
+2025-06-04 20:46:31 - __main__ - INFO - main.run_pipeline:40 - =================================================
+2025-06-04 20:46:31 - __main__ - INFO - main.run_pipeline:41 - 启动 LLM 合同风险审查流程
+2025-06-04 20:46:31 - __main__ - INFO - main.run_pipeline:42 - =================================================
+2025-06-04 20:46:31 - __main__ - INFO - main.run_pipeline:47 - --- 开始阶段: 数据预处理 ---
+2025-06-04 20:46:31 - data_handling.data_preprocess - INFO - data_preprocess.preprocess_all_data:95 - 开始数据预处理流程。原始数据来源: D:\PROJECT\Data-Mining\LLM-Contract-Auditor\data\raw, 处理后数据目标: D:\PROJECT\Data-Mining\LLM-Contract-Auditor\data\processed
+2025-06-04 20:46:31 - data_handling.data_preprocess - INFO - data_preprocess._preprocess_single_csv:65 - 开始预处理文件: contract.csv。原始形状: (75, 2)
+2025-06-04 20:46:31 - data_handling.data_preprocess - INFO - data_preprocess._preprocess_single_csv:82 - 已保存预处理后的数据到: D:\PROJECT\Data-Mining\LLM-Contract-Auditor\data\processed\processed_contract.csv
+2025-06-04 20:46:31 - data_handling.data_preprocess - INFO - data_preprocess._preprocess_single_csv:65 - 开始预处理文件: checklist.csv。原始形状: (56, 2)
+2025-06-04 20:46:31 - data_handling.data_preprocess - INFO - data_preprocess._preprocess_single_csv:82 - 已保存预处理后的数据到: D:\PROJECT\Data-Mining\LLM-Contract-Auditor\data\processed\processed_checklist.csv
+2025-06-04 20:46:31 - data_handling.data_preprocess - INFO - data_preprocess._preprocess_single_csv:65 - 开始预处理文件: clause_review_pair.csv。原始形状: (239, 3)
+2025-06-04 20:46:31 - data_handling.data_preprocess - INFO - data_preprocess._preprocess_single_csv:82 - 已保存预处理后的数据到: D:\PROJECT\Data-Mining\LLM-Contract-Auditor\data\processed\processed_clause_review_pair.csv
+2025-06-04 20:46:31 - data_handling.data_preprocess - INFO - data_preprocess._preprocess_single_csv:65 - 开始预处理文件: GT_contract_risk.csv。原始形状: (75, 3)
+2025-06-04 20:46:31 - data_handling.data_preprocess - INFO - data_preprocess._preprocess_single_csv:77 - 对文件 'GT_contract_risk.csv' 的 'gt' 列应用了特定的清洗函数。
+2025-06-04 20:46:31 - data_handling.data_preprocess - INFO - data_preprocess._preprocess_single_csv:82 - 已保存预处理后的数据到: D:\PROJECT\Data-Mining\LLM-Contract-Auditor\data\processed\processed_GT_contract_risk.csv
+2025-06-04 20:46:31 - data_handling.data_preprocess - INFO - data_preprocess.preprocess_all_data:142 - 所有数据文件预处理完成。
+2025-06-04 20:46:31 - __main__ - INFO - main.run_pipeline:50 - 数据预处理阶段成功完成。
+2025-06-04 20:46:31 - __main__ - INFO - main.run_pipeline:57 - --- 后续阶段 (数据加载, 知识检索等) 待实现 ---
+2025-06-04 20:46:31 - __main__ - INFO - main.run_pipeline:77 - =================================================
+2025-06-04 20:46:31 - __main__ - INFO - main.run_pipeline:78 - LLM 合同风险审查流程结束。
+2025-06-04 20:46:31 - __main__ - INFO - main.run_pipeline:79 - =================================================
+2025-06-04 20:51:31 - __main__ - INFO - main.run_pipeline:40 - =================================================
+2025-06-04 20:51:31 - __main__ - INFO - main.run_pipeline:41 - 启动 LLM 合同风险审查流程
+2025-06-04 20:51:31 - __main__ - INFO - main.run_pipeline:42 - =================================================
+2025-06-04 20:51:31 - __main__ - INFO - main.run_pipeline:47 - --- 开始阶段: 数据预处理 ---
+2025-06-04 20:51:31 - data_handling.data_preprocess - INFO - data_preprocess.preprocess_all_data:100 - 开始数据预处理流程。原始数据来源: D:\PROJECT\Data-Mining\LLM-Contract-Auditor\data\raw, 处理后数据目标: D:\PROJECT\Data-Mining\LLM-Contract-Auditor\data\processed
+2025-06-04 20:51:31 - data_handling.data_preprocess - INFO - data_preprocess._preprocess_single_csv:66 - 开始预处理文件: contract.csv。原始形状: (75, 2)
+2025-06-04 20:51:31 - data_handling.data_preprocess - INFO - data_preprocess._preprocess_single_csv:83 - 已保存预处理后的数据到: D:\PROJECT\Data-Mining\LLM-Contract-Auditor\data\processed\processed_contract.csv
+2025-06-04 20:51:31 - data_handling.data_preprocess - INFO - data_preprocess._preprocess_single_csv:66 - 开始预处理文件: checklist.csv。原始形状: (56, 2)
+2025-06-04 20:51:31 - data_handling.data_preprocess - INFO - data_preprocess._preprocess_single_csv:83 - 已保存预处理后的数据到: D:\PROJECT\Data-Mining\LLM-Contract-Auditor\data\processed\processed_checklist.csv
+2025-06-04 20:51:31 - data_handling.data_preprocess - INFO - data_preprocess._preprocess_single_csv:66 - 开始预处理文件: clause_review_pair.csv。原始形状: (239, 3)
+2025-06-04 20:51:32 - data_handling.data_preprocess - INFO - data_preprocess._preprocess_single_csv:83 - 已保存预处理后的数据到: D:\PROJECT\Data-Mining\LLM-Contract-Auditor\data\processed\processed_clause_review_pair.csv
+2025-06-04 20:51:32 - data_handling.data_preprocess - INFO - data_preprocess._preprocess_single_csv:66 - 开始预处理文件: GT_contract_risk.csv。原始形状: (75, 3)
+2025-06-04 20:51:32 - data_handling.data_preprocess - INFO - data_preprocess._preprocess_single_csv:78 - 对文件 'GT_contract_risk.csv' 的 'gt' 列应用了特定的清洗函数。
+2025-06-04 20:51:32 - data_handling.data_preprocess - INFO - data_preprocess._preprocess_single_csv:83 - 已保存预处理后的数据到: D:\PROJECT\Data-Mining\LLM-Contract-Auditor\data\processed\processed_GT_contract_risk.csv
+2025-06-04 20:51:32 - data_handling.data_preprocess - INFO - data_preprocess.preprocess_all_data:136 - 所有数据文件预处理完成。
+2025-06-04 20:51:32 - __main__ - INFO - main.run_pipeline:50 - 数据预处理阶段成功完成。
+2025-06-04 20:51:32 - __main__ - INFO - main.run_pipeline:57 - --- 后续阶段 (数据加载, 知识检索等) 待实现 ---
+2025-06-04 20:51:32 - __main__ - INFO - main.run_pipeline:77 - =================================================
+2025-06-04 20:51:32 - __main__ - INFO - main.run_pipeline:78 - LLM 合同风险审查流程结束。
+2025-06-04 20:51:32 - __main__ - INFO - main.run_pipeline:79 - =================================================

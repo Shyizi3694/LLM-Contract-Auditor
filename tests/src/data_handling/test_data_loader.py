@@ -86,24 +86,29 @@ def test_load_file_not_found(tmp_path: Path, caplog):
            "应记录文件未找到的错误日志"
 
 
-def test_load_empty_csv_file(tmp_path: Path, caplog):
+def test_load_empty_csv_file(tmp_path: Path, caplog): # caplog fixture 会被pytest自动传入
     """测试当CSV文件为空（或只有表头）时，DataLoader的行为。"""
     temp_data_dir = tmp_path / "empty_csv_test_data"
     temp_data_dir.mkdir()
     
-    # 创建一个空的 checklist.csv (只有表头)
     empty_checklist_file = temp_data_dir / "checklist.csv"
     pd.DataFrame(columns=['Risk_feature', 'Identified_items']).to_csv(empty_checklist_file, index=False)
 
-    loader = DataLoader(raw_data_path_override=str(temp_data_dir))
+    with caplog.at_level(logging.WARNING):
+        loader = DataLoader(raw_data_path_override=str(temp_data_dir))
+        df_checklist_loaded = loader.get_checklist_df()
 
-    with caplog.at_level(logging.WARNING): # 捕获WARNING级别的日志
-        df_checklist = loader.get_checklist_df()
+    assert df_checklist_loaded is not None
+    assert df_checklist_loaded.empty, "当CSV文件只有表头时，返回的DataFrame应该为空"
+    
+    # --- 关键：修正期望的日志消息 ---
+    expected_warning_message = "数据文件 'checklist.csv' 读取后为空 (可能只有表头或无数据行)。" 
+    
+    captured_warnings = [record.message for record in caplog.records if record.levelno == logging.WARNING]
+    
+    assert any(expected_warning_message in message for message in captured_warnings), \
+           f"应记录文件为空的警告日志。期望消息: '{expected_warning_message}'. 实际捕获的警告: {captured_warnings}"
 
-    assert df_checklist is not None
-    assert df_checklist.empty, "当CSV文件为空时，返回的DataFrame应该为空"
-    assert any(f"数据文件 'checklist.csv' 为空" in record.message for record in caplog.records), \
-           "应记录文件为空的警告日志"
 
 def test_load_csv_with_missing_required_columns(tmp_path: Path, caplog):
     """测试当CSV文件缺少必需列时的行为。"""

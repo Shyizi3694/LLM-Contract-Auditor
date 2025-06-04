@@ -1,0 +1,57 @@
+Risk_feature,Identified_items
+illegal subject qualification,"- Party A lacks property ownership or subletting rights (e.g., unauthorized subletting by secondary landlords without owner consent) - Party B uses fake identification (e.g., signing contracts with forged documents)"
+missing subject information,"- Fails to list both parties' ID numbers, contact addresses, or phone numbers - Party B (as a company) does not provide business license information"
+property rights defects,"- Property lacks ownership certificate or certificate mismatches actual status - Property has mortgages, seizures, co-ownership disputes, or unresolved ownership claims"
+usage restriction conflicts,"- Property’s designated use conflicts with agreed purpose (e.g., residential converted to commercial use without approval) - Party B alters usage without authorization (e.g., office converted to warehouse, residential used for group rentals)"
+unreasonable rent & payment terms,"- Excessively short rent payment cycles (e.g., requiring lump-sum payment for multiple years) - Overdue penalty rates exceed legal limit (30%) or lack grace period clarity"
+vague deposit terms,"- Unclear deposit usage, refund conditions, or timelines (e.g., missing requirements like 'settling all fees' or 'facilities in good condition') - Ambiguous deposit deduction rules (e.g., no standards for damage compensation)"
+unclear maintenance responsibilities,"- Fails to distinguish between main structure and ancillary facility repairs - No agreement on repair response time or cost allocation (e.g., Party A delays repairs or Party B self-repairs without approval)"
+renovation clause loopholes,"- Renovations not requiring Party A’s written consent - Unclear post-lease renovation ownership (e.g., whether fixed renovations remain or require compensation)"
+missing subletting clauses,- Prohibits subletting but lacks breach penalties - Allows subletting but omits Party A’s approval process or sub-tenant qualifications
+vague force majeure & termination,"- Narrow force majeure scope (e.g., excludes pandemics, policy adjustments) - Early termination lacks clear notice period or penalty standards (e.g., sudden termination without buffer)"
+expense liability disputes,"- Unclear responsibility for utilities, property fees, etc. - Omits shared costs or taxes (e.g., commercial property taxes)"
+non-compliant handover,"- No signed Handover Checklist or incomplete facility condition records (e.g., furniture/appliance status) - Fails to verify keys, access cards, etc., during handover"
+rent & fee arrears,"- No measures for prolonged rent defaults (e.g., missing demand notices before termination) - Party A’s delayed collection exceeding statute of limitations"
+safety & liability issues,"- Unassigned safety responsibilities (e.g., fire/electrical hazards from Party B’s actions) - Property defects (e.g., leaks, wall cracks) causing losses to Party B or third parties"
+improper jurisdiction,"- Jurisdiction court unrelated to contract performance location or parties’ residences (increasing litigation costs) - Violates hierarchical jurisdiction rules (e.g., directly assigning intermediate courts for minor cases)"
+unfair or illegal terms,"- Exempts one party’s key rights (e.g., 'Party A may reclaim property without compensation') - Violates mandatory laws (e.g., deposit exceeding 20% of annual rent, unlimited rent hikes)"
+expropriation compensation gaps,"- Unclear compensation distribution during government requisition (e.g., renovation reimbursements, relocation fees) - Omits rent settlement or loss sharing upon termination due to demolition"
+unclear renewal priority,"- Vague 'equal conditions' for renewal priority (e.g., unrestricted rent hikes or lease term changes) - No renewal process details (e.g., application deadlines, signing timelines)"
+missing notice & delivery terms,"- Unspecified written notification methods (e.g., email, SMS, registered mail) or effective time - Failure to update contact addresses causing undelivered notices"
+contract party information,Is the name and qualification level of the contract party in compliance with the project requirements?
+contractor qualification,Does the contractor's qualification level match the scope of the project?
+project name,Is the project name consistent with the bidding documents?
+project location,Is the project location specified to a specific address?
+project approval number,Is the project approval number consistent with the approval documents?
+funding source,Is the funding source accurately stated?
+project scope,Is the project content consistent with the contractor's scope?
+start and completion dates,Are the start date and completion date clearly defined?
+project manager qualification,Does the project manager's qualification meet the requirements?
+contract signing time,Is the contract signing time reasonable and within 30 days after the issuance of the bid award notice?
+contract details,"Are the signing location, contract effective conditions, and the number of contract copies clearly stated?"
+site and funding guarantees,"Are the construction site, construction conditions, funding proof, and payment guarantees provided?"
+contractor obligations,"Are the contractor's obligations, such as submitting completion documents, the scope of the project manager's authorization, and penalties for unauthorized replacement of the project manager, clearly defined?"
+subcontracting restrictions,"Are the restrictions on subcontracting, such as prohibited subcontracting of main structures and critical works, clearly stated?"
+additional contractor obligations,"Are other obligations of the contractor, such as approval requirements for key construction personnel leaving the site, clearly defined?"
+supervision content,Are the supervision content and authority of the supervisor clearly stated?
+supervision personnel information,Is the information of the supervision personnel clearly provided?
+supervision facilities,"Are the office and living facilities for the supervisor at the construction site provided, and who bears the costs?"
+special quality standards,Are special quality standards and requirements clearly stated?
+safety and security,"Are the safety goals, security arrangements, and civilized construction requirements clearly defined?"
+delay penalties,Is the method for calculating delay penalties due to the contractor's fault clearly stated?
+construction plan,"Are the construction organization design, construction schedule revisions, and preparation for commencement clearly defined?"
+material and equipment,Are the storage costs for materials and equipment supplied by the employer clearly stated?
+testing facilities,Are the testing facilities and conditions required at the construction site clearly defined?
+contract price risks,"Are the risk scope, risk cost calculation methods, and price adjustment methods beyond the risk scope clearly stated?"
+defect liability period,Is the defect liability period and the reasonable time for the contractor to respond to maintenance requests clearly defined?
+breach of contract,Are the methods for calculating and bearing liabilities for breaches by the employer or contractor clearly stated?(Party A or Party B failed to fulfill the contractual agreement)
+dispute resolution,Is the choice of arbitration or litigation clearly stated?
+contract consistency,Is the current valid version of the 'Construction Project Contract (Model Text)' (GF-2017-0201) used?
+consistency check,"Are the contents of the contract agreement and special contract terms consistent, avoiding contradictions?"
+bidding document alignment,Is the contract content consistent with the bidding documents and bid award notice?
+optional clauses,"For optional clauses, if there are no special agreements, are they filled with 'N/A' or '/' to avoid blank clauses?"
+calendar days,Are the calendar days consistent with the construction period?
+quality standards,"Are the quality standards typically stated as 'qualified'? If there are special requirements, are they specified in the special contract terms?"
+contract price,Is the contract price consistent with the bid price?
+price form,Is the contract price form consistent with the bidding documents and special contract terms?
+project manager information,"Are the project manager's name, ID number, and authorization scope clearly stated?"
