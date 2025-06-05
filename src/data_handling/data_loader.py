@@ -2,26 +2,38 @@
 import pandas as pd
 import os
 import logging
-try:
-    from src.common.config import RAW_DATA_PATH as DEFAULT_RAW_DATA_PATH # 导入默认路径
-except ImportError:
-    DEFAULT_RAW_DATA_PATH = "data/raw" # 回退
+# 从配置中导入两个路径
+from src.common.config import RAW_DATA_PATH, PROCESSED_DATA_PATH
+
+logger = logging.getLogger(__name__)
+
 
 logger = logging.getLogger(__name__)
 
 class DataLoader:
-    def __init__(self, raw_data_path_override: str | None = None): # <--- 新增参数
+    def __init__(self, use_processed_data: bool = False): # <--- 修改点
         """
         初始化 DataLoader。
-        可以传入 raw_data_path_override 来覆盖默认的原始数据路径，主要用于测试。
+
+        参数:
+            use_processed_data (bool): 如果为 True, 则从 PROCESSED_DATA_PATH 加载处理后的数据。
+                                     否则, 从 RAW_DATA_PATH 加载原始数据。
         """
-        self.current_raw_data_path = raw_data_path_override if raw_data_path_override is not None else DEFAULT_RAW_DATA_PATH
-        if self.current_raw_data_path is None:
-             error_msg = "原始数据路径 (RAW_DATA_PATH) 未配置或导入失败。"
+        if use_processed_data:
+            self.base_path = PROCESSED_DATA_PATH
+            self.file_prefix = "processed_"
+            logger.info(f"DataLoader 将从处理后数据目录加载: {self.base_path}")
+        else:
+            self.base_path = RAW_DATA_PATH
+            self.file_prefix = ""
+            logger.info(f"DataLoader 将从原始数据目录加载: {self.base_path}")
+
+        if self.base_path is None:
+             error_msg = "数据路径未配置或导入失败。"
              logger.critical(error_msg)
              raise ValueError(error_msg)
-        logger.info(f"DataLoader 使用的原始数据路径: {self.current_raw_data_path}")
 
+        # ... (实例变量声明保持不变)
         self.contracts_df: pd.DataFrame | None = None
         self.checklist_df: pd.DataFrame | None = None
         self.expert_pairs_df: pd.DataFrame | None = None
@@ -30,10 +42,8 @@ class DataLoader:
         self._load_all_data()
 
     def _construct_file_path(self, file_name: str) -> str:
-        """
-        构建文件的完整路径并检查文件是否存在 (使用 self.current_raw_data_path)。
-        """
-        path = os.path.join(self.current_raw_data_path, file_name) # <--- 使用实例变量
+        """构建文件的完整路径 (使用 self.base_path)。"""
+        path = os.path.join(self.base_path, file_name)
         if not os.path.exists(path):
             logger.error(f"数据文件未找到: {path}")
             raise FileNotFoundError(f"数据文件未找到: {path}。")
@@ -77,23 +87,24 @@ class DataLoader:
             logger.error(f"加载数据文件 '{file_name}' 时发生未预期错误: {e}", exc_info=True)
             return pd.DataFrame()
 
-    # load_contracts, load_checklist, load_expert_knowledge, load_ground_truth
-    # _load_all_data, get_contracts_df 等方法保持不变...
-    # (此处省略这些方法的代码，假设它们已在您的文件中)
-    def load_contracts(self, file_name="contract.csv") -> pd.DataFrame:
-        """加载合同条款数据 (contract.csv)"""
+    # --- 修改所有加载方法，以使用 self.file_prefix ---
+    def load_contracts(self) -> pd.DataFrame:
+        file_name = f"{self.file_prefix}contract.csv"
         return self._load_csv(file_name, required_columns=['checkpoint', 'clause'])
 
-    def load_checklist(self, file_name="checklist.csv") -> pd.DataFrame:
-        """加载风险审查清单数据 (checklist.csv)"""
+    def load_checklist(self) -> pd.DataFrame:
+        file_name = f"{self.file_prefix}checklist.csv"
+        # 注意：预处理时我们将'Risk_feature'转为了小写，但列名本身不变。
+        # 如果您在预处理时也改了列名，这里也要相应修改。
+        # 假设列名仍为 'Risk_feature'
         return self._load_csv(file_name, required_columns=['Risk_feature', 'Identified_items'])
 
-    def load_expert_knowledge(self, file_name="clause_review_pair.csv") -> pd.DataFrame:
-        """加载专家知识库数据 (clause_review_pair.csv)"""
+    def load_expert_knowledge(self) -> pd.DataFrame:
+        file_name = f"{self.file_prefix}clause_review_pair.csv"
         return self._load_csv(file_name, required_columns=['checkpoint', 'clause', 'review'])
 
-    def load_ground_truth(self, file_name="GT_contract_risk.csv") -> pd.DataFrame:
-        """加载Ground Truth风险数据 (GT_contract_risk.csv)"""
+    def load_ground_truth(self) -> pd.DataFrame:
+        file_name = f"{self.file_prefix}GT_contract_risk.csv"
         return self._load_csv(file_name, required_columns=['checkpoint', 'clause', 'gt'])
 
     def _load_all_data(self):
